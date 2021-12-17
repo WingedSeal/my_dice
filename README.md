@@ -9,7 +9,7 @@ MyDice is a flutter mobile app project that is a rip-off/upgraded version of [my
 |3 Dice|2 Dice|
 |Can roll die seperately| Cannot roll die seperately|
 |Looks cooler|Looks cool|
-|Teal theme|Gold theme|
+|Gold theme|Teal theme|
 |Bigger and centered appbar text|Smaller appbar text|
 |Roll All button|No Roll All button|
 |*Useless*|*Useless*|
