@@ -3,16 +3,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   return runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        appBar: AppBar(
-          title: const Text('My Dice'),
-          backgroundColor: Colors.teal,
-        ),
-        body: const DicePage(),
-      ),
+      home: DicePage(),
     ),
   );
 }
@@ -25,43 +18,78 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-  int leftDiceNumber = 1;
-  int rightDiceNumber = 1;
+  List<int> dicesNumber = [
+    Random().nextInt(6) + 1,
+    Random().nextInt(6) + 1,
+    Random().nextInt(6) + 1
+  ];
 
-  void changeDiceFace() {
+  void changeDiceFace(int dice) {
     setState(() {
-      leftDiceNumber = Random().nextInt(6) + 1;
-      rightDiceNumber = Random().nextInt(6) + 1;
+      dicesNumber[dice] = Random().nextInt(6) + 1;
     });
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: TextButton(
-              child: Image.asset(
-                'images/dice$leftDiceNumber.png',
-              ),
-              onPressed: () {
-                changeDiceFace();
-              },
-            ),
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Colors.yellow[700],
+        appBar: AppBar(
+          title: const Text('My Dice'),
+          titleTextStyle: TextStyle(fontSize: 50, color: Colors.grey[800]),
+          centerTitle: true,
+          backgroundColor: Colors.yellow[600],
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Text(
+            'Roll All',
+            style: TextStyle(color: Colors.black),
           ),
-          Expanded(
-            child: TextButton(
-              child: Image.asset(
-                'images/dice$rightDiceNumber.png',
+          onPressed: () {
+            setState(() {
+              dicesNumber = [
+                Random().nextInt(6) + 1,
+                Random().nextInt(6) + 1,
+                Random().nextInt(6) + 1
+              ];
+            });
+          },
+          backgroundColor: Colors.white,
+        ),
+        body: Center(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: TextButton(
+                  child: Image.asset(
+                    'images/dice${dicesNumber[0]}.png',
+                  ),
+                  onPressed: () {
+                    changeDiceFace(0);
+                  },
+                ),
               ),
-              onPressed: () {
-                changeDiceFace();
-              },
-            ),
+              Expanded(
+                child: TextButton(
+                  child: Image.asset(
+                    'images/dice${dicesNumber[1]}.png',
+                  ),
+                  onPressed: () {
+                    changeDiceFace(1);
+                  },
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: Image.asset(
+                    'images/dice${dicesNumber[2]}.png',
+                  ),
+                  onPressed: () {
+                    changeDiceFace(2);
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      );
 }
