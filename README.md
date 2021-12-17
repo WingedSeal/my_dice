@@ -2,7 +2,7 @@
 
 MyDice is a flutter mobile app project that is a rip-off/upgraded version of [my_dice_w7](https://github.com/jeab290/my_dice_w7 "A new Flutter project.")
 
-![Application sample](https://lh3.googleusercontent.com/XVviK2aH-7YCHaZ564ag6HTbdBNplF_5yCiqxrEg1eB5q1uIbM2_9RStLjwKkDUpZ0xQ5hYyQZTiwn0=w1868-h903)
+![Application sample](https://media.discordapp.net/attachments/641170964519976960/921420090359033917/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f585676694b3261482d37594348615a35363461673648546264424e706c465f3579436971787245673165423571317549624d325f395253744c6a774b6b4455705a30785135685979515a5469776e303d77313836382d68393033.png?width=330&height=670)
 
 |MyDice|my_dice_w7|
 |-|-|
